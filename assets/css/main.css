@@ -80,23 +80,21 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
    ============================================ */
 .navbar{
   position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:0 40px;height:230px;
+  padding:0 40px;height:80px;
   display:flex;align-items:center;justify-content:space-between;
   transition:background var(--ease),box-shadow var(--ease),height var(--ease);
 }
 .navbar.scrolled{
   background:var(--white);
   box-shadow:var(--sh-sm);
-  height:180px;
+  height:64px;
 }
-.navbar-logo img {
-  height: 210px;
-  width: auto;
-  object-fit: contain;
+.navbar-logo img{
+  height:42px;width:auto;
   transition:filter var(--ease),height var(--ease);
 }
-
-.navbar.scrolled .navbar-logo img { height: 165px; }
+.navbar:not(.scrolled) .navbar-logo img{filter:brightness(0) invert(1)}
+.navbar.scrolled .navbar-logo img{height:34px}
 
 .navbar-links{display:flex;align-items:center;gap:40px}
 .navbar-links a{
@@ -148,7 +146,7 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
   inset:0;
   background:
     linear-gradient(to bottom, rgba(10,20,36,0.55) 0%, rgba(10,20,36,0.35) 60%, rgba(10,20,36,0.7) 100%),
-   url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=80') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80') center/cover no-repeat;
   transform-origin:center top;
   transition:transform 0.1s linear;
 }
@@ -520,4 +518,45 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
   .container{padding:0 20px}
   .section-about,.section-services,.section-realisations,.section-contact{padding:90px 0}
   .navbar{padding:0 20px}
+}
+
+/* ============================================
+   HERO SLIDER
+   ============================================ */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 1;
+  transform-origin: center top;
+  transition: opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-slide-active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 20, 36, 0.55) 0%,
+    rgba(10, 20, 36, 0.35) 60%,
+    rgba(10, 20, 36, 0.70) 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-content-wrap {
+  z-index: 4;
+}
+
+.hero-scroll-indicator {
+  z-index: 4;
 }

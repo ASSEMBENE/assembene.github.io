@@ -8,70 +8,128 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
-// --- Hero shrink effect (comme Porcelanosa) ---
-const heroImage = document.querySelector('.hero-image');
-const heroWrapper = document.querySelector('.hero-wrapper');
+// --- Hero slider élégant ---
+const slides = [
+  "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=80",
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=80",
+  "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=1800&q=80"
+];
 
-if (heroImage && heroWrapper) {
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const wrapperH = heroWrapper.offsetHeight;
-    const progress = Math.min(scrollY / wrapperH, 1);
+let currentSlide = 0;
+let nextSlide = 1;
 
-    // Scale de 1 → 0.88 + léger fade
-    const scale = 1 - (progress * 0.12);
-    const opacity = 1 - (progress * 0.6);
-    heroImage.style.transform = `scale(${scale})`;
-    heroImage.style.opacity = opacity;
+// Créer les éléments du slider
+const heroWrapper = document.querySelector('.hero-sticky');
+if (heroWrapper) {
+  // Slide actuelle
+  const slideA = document.createElement('div');
+  slideA.className = 'hero-slide hero-slide-active';
+  slideA.style.backgroundImage = `url('${slides[0]}')`;
 
-    // Contenu héro se décale vers le haut
-    const content = document.querySelector('.hero-content-wrap');
-    if (content) {
-      content.style.transform = `translateY(${scrollY * 0.3}px)`;
-      content.style.opacity = 1 - (progress * 1.8);
-    }
-  }, { passive: true });
+  // Slide suivante (cachée)
+  const slideB = document.createElement('div');
+  slideB.className = 'hero-slide';
+  slideB.style.backgroundImage = `url('${slides[1]}')`;
+
+  // Overlay gradient commun
+  const overlay = document.createElement('div');
+  overlay.className = 'hero-overlay';
+
+  // Remplacer hero-image par le slider
+  const oldHeroImage = document.querySelector('.hero-image');
+  if (oldHeroImage) oldHeroImage.remove();
+
+  heroWrapper.prepend(overlay);
+  heroWrapper.prepend(slideB);
+  heroWrapper.prepend(slideA);
+
+  // Précharger les images
+  slides.forEach(src => { const img = new Image(); img.src = src; });
+
+  // Fonction de transition
+  function nextSlideTransition() {
+    const allSlides = document.querySelectorAll('.hero-slide');
+    const active = document.querySelector('.hero-slide-active');
+    const inactive = document.querySelector('.hero-slide:not(.hero-slide-active)');
+
+    // Préparer la prochaine image
+    nextSlide = (currentSlide + 1) % slides.length;
+    inactive.style.backgroundImage = `url('${slides[nextSlide]}')`;
+    inactive.style.opacity = '0';
+    inactive.style.zIndex = '2';
+    active.style.zIndex = '1';
+
+    // Transition fondu lent
+    inactive.classList.add('hero-slide-active');
+
+    setTimeout(() => {
+      active.classList.remove('hero-slide-active');
+      active.style.zIndex = '1';
+      inactive.style.zIndex = '2';
+      currentSlide = nextSlide;
+    }, 2500);
+  }
+
+  // Lancer le slider toutes les 6 secondes
+  setInterval(nextSlideTransition, 6000);
 }
+
+// --- Hero shrink effect au scroll ---
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const wrapperH = window.innerHeight;
+  const progress = Math.min(scrollY / wrapperH, 1);
+
+  const slides = document.querySelectorAll('.hero-slide');
+  slides.forEach(slide => {
+    const scale = 1 - (progress * 0.12);
+    slide.style.transform = `scale(${scale})`;
+  });
+
+  const content = document.querySelector('.hero-content-wrap');
+  if (content) {
+    content.style.transform = `translateY(${scrollY * 0.3}px)`;
+    content.style.opacity = 1 - (progress * 1.8);
+  }
+}, { passive: true });
 
 // --- Mobile menu ---
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 
-navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', isOpen);
-  const spans = navToggle.querySelectorAll('span');
-  if (isOpen) {
-    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-    spans[1].style.opacity   = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-  } else {
-    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-  }
-});
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', false);
-    navToggle.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+    const spans = navToggle.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity   = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    }
   });
-});
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', false);
+      navToggle.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    });
+  });
+}
 
 // --- Scroll reveal ---
 const reveals = document.querySelectorAll('.reveal');
-new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); }
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' })
-.observe = (() => {
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => obs.observe(el));
-})();
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
 
 // --- Smooth scroll ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
