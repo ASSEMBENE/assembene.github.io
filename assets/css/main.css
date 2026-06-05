@@ -80,21 +80,21 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
    ============================================ */
 .navbar{
   position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:0 40px;height:80px;
+  padding:0 40px;height:230px;
   display:flex;align-items:center;justify-content:space-between;
   transition:background var(--ease),box-shadow var(--ease),height var(--ease);
 }
 .navbar.scrolled{
   background:var(--white);
   box-shadow:var(--sh-sm);
-  height:64px;
+  height:180px;
 }
 .navbar-logo img{
-  height:42px;width:auto;
+  height:210px;width:auto;
   transition:filter var(--ease),height var(--ease);
 }
 .navbar:not(.scrolled) .navbar-logo img{filter:brightness(0) invert(1)}
-.navbar.scrolled .navbar-logo img{height:34px}
+.navbar.scrolled .navbar-logo img{height:165px}
 
 .navbar-links{display:flex;align-items:center;gap:40px}
 .navbar-links a{
