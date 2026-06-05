@@ -94,7 +94,9 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
   width: auto;
   transition:filter var(--ease),height var(--ease);
 }
-.navbar:not(.scrolled) .navbar-logo img{filter:brightness(0) invert(1)}
+.navbar:not(.scrolled) .navbar-logo img {
+  filter: brightness(0) invert(1);
+}
 .navbar.scrolled .navbar-logo img { height: 48px; }
 
 .navbar-links{display:flex;align-items:center;gap:40px}
