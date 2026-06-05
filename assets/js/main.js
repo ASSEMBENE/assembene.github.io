@@ -8,15 +8,16 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
-// --- Hero slider élégant ---
-const slides = [
-  "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=80",
-  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=80",
-  "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=1800&q=80"
-];
+// --- Hero slider ---
+let current = 0;
+const heroSlides = document.querySelectorAll('.hero-slide');
 
-let currentSlide = 0;
-let nextSlide = 1;
+function changeSlide() {
+  heroSlides[current].classList.remove('hero-slide-active');
+  current = (current + 1) % heroSlides.length;
+  heroSlides[current].classList.add('hero-slide-active');
+}
+setInterval(changeSlide, 6000);
 
 // Créer les éléments du slider
 const heroWrapper = document.querySelector('.hero-sticky');
