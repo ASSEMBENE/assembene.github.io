@@ -1,0 +1,37 @@
+title: ASSEMBENE
+description: Commerce & Distribution — Solutions professionnelles
+baseurl: ""
+url: "https://assembene.netlify.app"
+lang: fr
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Collections
+collections:
+  services:
+    output: true
+    permalink: /services/:name/
+  realisations:
+    output: true
+    permalink: /realisations/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
