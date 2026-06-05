@@ -91,9 +91,8 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
 }
 .navbar-logo img{
   height:210px;width:auto;
-  transition:filter var(--ease),height var(--ease);
+  transition:height var(--ease);
 }
-
 .navbar.scrolled .navbar-logo img{height:165px}
 
 .navbar-links{display:flex;align-items:center;gap:40px}
@@ -437,7 +436,7 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
   display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;
   gap:56px;margin-bottom:64px;
 }
-.footer-logo img{height:40px;width:auto;filter:brightness(0) invert(1);margin-bottom:18px}
+.footer-logo img{height:40px;width:auto;margin-bottom:18px}
 .footer-brand p{font-size:0.875rem;line-height:1.85;max-width:260px}
 .footer-col h4{
   font-family:var(--font-body);font-size:0.68rem;font-weight:500;
