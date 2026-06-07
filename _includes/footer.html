@@ -1,9 +1,9 @@
-﻿<footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="ASSEMBENE CONCEPTION">
+          <img src="{{ '/logo.png' | relative_url }}" alt="ASSEMBENE CONCEPTION">
         </div>
         <p>Votre partenaire de confiance en conception, commerce et distribution. Solutions professionnelles sur mesure, avec une expertise orientée Afrique et international.</p>
       </div>
@@ -20,8 +20,8 @@
       <div class="footer-col">
         <h4>Nos Services</h4>
         <ul>
-          <li><a href="{{ '/#services' | relative_url }}">Distribution</a></li>
           <li><a href="{{ '/#services' | relative_url }}">Conception & Design</a></li>
+          <li><a href="{{ '/#services' | relative_url }}">Distribution</a></li>
           <li><a href="{{ '/#services' | relative_url }}">Commerce Afrique</a></li>
           <li><a href="{{ '/#services' | relative_url }}">Logistique</a></li>
         </ul>
@@ -30,13 +30,17 @@
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:contact@assembene-conception.com">contact@assembene-conception.com</a></li>
-          <li><a href="tel:+33100000000">+33 1 00 00 00 00</a></li>
-          <li><a href="#">Île-de-France, France</a></li>
+          <li><a href="#">32 Rue Duret, 75016 Paris</a></li>
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <span>© {{ 'now' | date: "%Y" }} ASSEMBENE CONCEPTION — Tous droits réservés</span>
+      <div style="display:flex; gap: 24px; align-items: center;">
+        <a href="{{ '/mentions-legales/' | relative_url }}" style="font-size:0.78rem; color:rgba(255,255,255,0.45); transition: color 0.3s ease;">Mentions légales</a>
+        <a href="{{ '/politique-confidentialite/' | relative_url }}" style="font-size:0.78rem; color:rgba(255,255,255,0.45); transition: color 0.3s ease;">Politique de confidentialité</a>
+      </div>
       <div class="footer-socials">
         <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
         <a href="#" class="footer-social" aria-label="Facebook">f</a>
