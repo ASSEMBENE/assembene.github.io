@@ -1,7 +1,7 @@
 title: ASSEMBENE
 description: Commerce & Distribution — Solutions professionnelles
-baseurl: "/assembene-website"
-url: "https://assembene.netlify.app"
+baseurl: ""
+url: "https://assembene.github.io"
 lang: fr
 
 # Build settings
