@@ -725,3 +725,97 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
   .about-hero { padding: 100px 0 60px; }
 }
 </style>
+
+<!-- ============ CSS À AJOUTER À LA FIN DE main.css ============ -->
+<style id="org-css">
+/* ORG ENTREPRISE */
+.org-wrap { display:flex; flex-direction:column; align-items:center; gap:0; margin-top:40px; }
+.org-level { display:flex; justify-content:center; gap:32px; width:100%; }
+.org-level-2 { gap:24px; }
+.org-level-7 { gap:10px; }
+.org-box {
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-md);
+  padding:14px 20px;
+  text-align:center;
+  display:flex; flex-direction:column; gap:5px;
+  min-width:160px;
+}
+.org-top { background:var(--primary); border-color:var(--primary); min-width:260px; }
+.org-top .org-title { color:var(--white); }
+.org-top .org-sub { color:var(--accent); }
+.org-teal { background:rgba(74,127,165,0.08); border-color:var(--blue); }
+.org-purple { background:rgba(83,74,183,0.06); border-color:#534AB7; }
+.org-title { font-family:var(--font-display); font-size:1rem; font-weight:600; color:var(--primary); }
+.org-sub { font-size:0.78rem; color:var(--text-light); }
+
+/* Connecteurs */
+.org-connector-v { width:1px; height:24px; background:var(--border); margin:0 auto; }
+.org-connector-v-top { width:1px; height:20px; background:var(--border); margin:0 auto; }
+.org-connector-h-2 {
+  width:60%; height:1px; background:var(--border); margin:0 auto;
+}
+.org-connector-h-7 {
+  width:95%; height:1px; background:var(--border); margin:0 auto;
+}
+.org-branch { display:flex; flex-direction:column; align-items:center; flex:1; }
+
+/* Départements */
+.org-dept { display:flex; flex-direction:column; align-items:center; flex:1; }
+.org-dept-box { min-width:0; width:100%; padding:12px 8px; }
+.org-dept-title { font-family:var(--font-body); font-size:0.8rem; font-weight:600; color:var(--primary); }
+.org-dept-sub { font-size:0.72rem; color:var(--text-light); }
+.org-green { background:rgba(59,109,17,0.06); border-color:#3B6D11; }
+.org-blue-dept { background:rgba(24,95,165,0.06); border-color:var(--blue); }
+
+/* PAYS */
+.pays-wrap { display:flex; flex-direction:column; align-items:center; }
+.pays-siege { display:flex; justify-content:center; }
+.pays-siege-box {
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:var(--r-md);
+  padding:16px 40px;
+  text-align:center;
+  display:flex; flex-direction:column; gap:6px;
+}
+.pays-connector-v { width:1px; height:24px; background:rgba(255,255,255,0.2); margin:0 auto; }
+.pays-connector-h { width:80%; height:1px; background:rgba(255,255,255,0.2); margin:0 auto; }
+.pays-zones { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; width:100%; }
+.pays-zone { display:flex; flex-direction:column; align-items:center; }
+.pays-box {
+  width:100%;
+  border-radius:var(--r-md);
+  padding:20px 16px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.pays-africa { background:rgba(240,201,58,0.12); border:1px solid rgba(240,201,58,0.3); }
+.pays-europe { background:rgba(74,127,165,0.15); border:1px solid rgba(74,127,165,0.4); }
+.pays-america { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); }
+.pays-caraibes { background:rgba(29,158,117,0.12); border:1px solid rgba(29,158,117,0.3); }
+.pays-zone-title { font-family:var(--font-display); font-size:1rem; font-weight:600; color:var(--white); }
+.pays-zone-list { font-size:0.78rem; color:rgba(255,255,255,0.65); line-height:1.7; }
+.pays-sub-zones { display:flex; flex-direction:column; gap:10px; }
+.pays-sub-box {
+  background:rgba(255,255,255,0.05);
+  border-radius:var(--r-sm);
+  padding:10px 12px;
+  display:flex; flex-direction:column; gap:4px;
+}
+.pays-sub-title { font-size:0.8rem; font-weight:600; color:var(--accent); }
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .pays-zones { grid-template-columns:repeat(2,1fr); }
+  .org-level-7 { flex-wrap:wrap; }
+  .org-dept { min-width:calc(25% - 10px); }
+}
+@media(max-width:768px){
+  .org-level-2 { flex-direction:column; align-items:center; }
+  .org-level-7 { gap:8px; }
+  .org-dept { min-width:calc(50% - 8px); }
+  .org-connector-h-2,.org-connector-h-7 { width:1px; height:20px; }
+  .pays-zones { grid-template-columns:1fr; }
+}
+</style>
