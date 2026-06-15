@@ -243,18 +243,103 @@ description: ASSEMBENE CONCEPTION — Votre partenaire en conception, commerce e
     </div>
   </div>
 
-  <!-- CTA -->
-  <div class="about-cta">
-    <div class="container" style="text-align:center">
-      <h3 style="font-family:var(--font-display);font-size:2rem;color:var(--white);font-weight:300;margin-bottom:16px">
-        Prêt à concrétiser votre projet ?
-      </h3>
-      <p style="color:rgba(255,255,255,0.7);margin-bottom:32px;font-size:1.05rem">
-        Contactez-nous pour un accompagnement personnalisé de A à Z.
-      </p>
-      <a href="#contact" class="btn btn-gold">Nous contacter</a>
+<!-- ============ ORGANIGRAMMES — À INSÉRER DANS LA SECTION ABOUT ============ -->
+<!-- Placer ce bloc juste AVANT le CTA final (div class="about-cta") -->
+
+<div class="about-block about-block-white">
+  <div class="container">
+    <span class="label">Structure interne</span>
+    <h3 class="about-h3">Organigramme de l'entreprise</h3>
+    <div class="org-wrap">
+
+      <!-- NIVEAU 1 : Direction générale -->
+      <div class="org-level">
+        <div class="org-box org-top">
+          <span class="org-title">Direction générale</span>
+          <span class="org-sub">Jean-François DIATTA</span>
+        </div>
+      </div>
+
+      <div class="org-connector-v"></div>
+      <div class="org-connector-h-2"></div>
+
+      <!-- NIVEAU 2 : Secrétariat + Conseil -->
+      <div class="org-level org-level-2">
+        <div class="org-branch">
+          <div class="org-connector-v-top"></div>
+          <div class="org-box org-teal">
+            <span class="org-title">Secrétariat général</span>
+            <span class="org-sub">R. DIATTA — A. DIOP-THOMAS</span>
+          </div>
+        </div>
+        <div class="org-branch">
+          <div class="org-connector-v-top"></div>
+          <div class="org-box org-purple">
+            <span class="org-title">Conseil technique &amp; scientifique</span>
+            <span class="org-sub">de Manton · Williams · Bergson · Baudouin · Goldstein · Levy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="org-connector-v"></div>
+      <div class="org-connector-h-7"></div>
+
+      <!-- NIVEAU 3 : Départements -->
+      <div class="org-level org-level-7">
+        <div class="org-dept">
+          <div class="org-connector-v-top"></div>
+          <div class="org-box org-dept-box">
+            <span class="org-dept-title">Commercial</span>
+            <span class="org-dept-sub">P. DASILVA</span>
+          </div>
+        </div>
+        <div class="org-dept">
+          <div class="org-connector-v-top"></div>
+          <div class="org-box org-dept-box">
+            <span class="org-dept-title">Communication</span>
+            <span class="org-dept-sub">A. MBOW</span>
+          </div>
+        </div>
+        <div class="org-dept">
+          <div class="org-connector-v-top"></div>
+          <div class="org-box org-dept-box">
+            <span class="org-dept-title">Architecture &amp; Design</span>
+            <span class="org-dept-sub">P. TAFFOU</span>
+          </div>
+        </div>
+        <div class="org-dept">
+          <div class="org-connector-v-top"></div>
+          <div class="org-box org-dept-box">
+            <span class="org-dept-title">Immobilier</span>
+            <span class="org-dept-sub">JY. BASSE</span>
+          </div>
+        </div>
+        <div class="org-dept">
+          <div class="org-connector-v-top"></div>
+          <div class="org-box org-dept-box">
+            <span class="org-dept-title">Banque &amp; Assurance</span>
+            <span class="org-dept-sub">M. ZORATTO</span>
+          </div>
+        </div>
+        <div class="org-dept">
+          <div class="org-connector-v-top"></div>
+          <div class="org-box org-dept-box org-green">
+            <span class="org-dept-title">Dév. Durable</span>
+            <span class="org-dept-sub">B. LIMARE</span>
+          </div>
+        </div>
+        <div class="org-dept">
+          <div class="org-connector-v-top"></div>
+          <div class="org-box org-dept-box org-blue-dept">
+            <span class="org-dept-title">IT</span>
+            <span class="org-dept-sub">EL H. CAMARA</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+</div>
 
 <!-- ORGANIGRAMME PAYS -->
 <div class="about-block about-block-dark">
@@ -324,9 +409,59 @@ description: ASSEMBENE CONCEPTION — Votre partenaire en conception, commerce e
     </div>
   </div>
 </div>
-
 </section>
 
+<!-- ============ NOS SERVICES ============ -->
+<section class="section-services" id="services">
+  <div class="container">
+    <div class="sec-header">
+      <div>
+        <span class="label">Nos Services</span>
+        <h2 class="title reveal">Ce que nous faisons</h2>
+        <p class="subtitle reveal d1">Des solutions complètes en conception, commerce, distribution et logistique.</p>
+      </div>
+      <a href="#contact" class="btn btn-dark reveal d2">Demander un devis</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal d1">
+        <div class="svc-icon">🏗️</div>
+        <h3>Conception &amp; Design</h3>
+        <p>Développement et conception de solutions sur mesure adaptées à vos besoins commerciaux et techniques spécifiques.</p>
+        <a href="#contact" class="svc-link">En savoir plus →</a>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="svc-icon">📦</div>
+        <h3>Distribution &amp; Approvisionnement</h3>
+        <p>Gestion complète de vos chaînes d'approvisionnement avec des délais maîtrisés et une fiabilité éprouvée.</p>
+        <a href="#contact" class="svc-link">En savoir plus →</a>
+      </div>
+      <div class="service-card reveal d3">
+        <div class="svc-icon">🌍</div>
+        <h3>Commerce Afrique &amp; International</h3>
+        <p>Développement de vos activités sur le continent africain et à l'international, avec une connaissance approfondie des marchés locaux.</p>
+        <a href="#contact" class="svc-link">En savoir plus →</a>
+      </div>
+      <div class="service-card reveal d1">
+        <div class="svc-icon">🚚</div>
+        <h3>Logistique &amp; Transport</h3>
+        <p>Organisation et optimisation de vos flux logistiques entre la France, l'Afrique et le reste du monde.</p>
+        <a href="#contact" class="svc-link">En savoir plus →</a>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="svc-icon">🔍</div>
+        <h3>Sourcing &amp; Achats</h3>
+        <p>Identification et sélection des meilleurs fournisseurs pour garantir la qualité et la compétitivité de vos achats.</p>
+        <a href="#contact" class="svc-link">En savoir plus →</a>
+      </div>
+      <div class="service-card reveal d3">
+        <div class="svc-icon">💼</div>
+        <h3>Conseil &amp; Stratégie</h3>
+        <p>Accompagnement stratégique pour développer votre activité et conquérir de nouveaux marchés en toute confiance.</p>
+        <a href="#contact" class="svc-link">En savoir plus →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ RÉALISATIONS ============ -->
 <section class="section-realisations" id="realisations">
