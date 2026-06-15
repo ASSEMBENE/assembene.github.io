@@ -819,3 +819,19 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
   .pays-zones { grid-template-columns:1fr; }
 }
 </style>
+.org-level-2 .org-branch {
+  flex: 1;
+}
+
+.org-level-2 .org-box {
+  height: 100%;
+  min-height: 80px;
+  justify-content: center;
+}
+
+.org-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
