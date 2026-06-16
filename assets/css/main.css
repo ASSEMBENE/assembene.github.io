@@ -782,7 +782,7 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
 }
 .pays-connector-v { width:1px; height:24px; background:rgba(255,255,255,0.2); margin:0 auto; }
 .pays-connector-h { width:80%; height:1px; background:rgba(255,255,255,0.2); margin:0 auto; }
-.pays-zones { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; width:100%; }
+.pays-zones { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; width:100%; }
 .pays-zone { display:flex; flex-direction:column; align-items:center; }
 .pays-box {
   width:100%;
@@ -794,6 +794,7 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.1;color:var(--primary)
 .pays-europe { background:rgba(74,127,165,0.15); border:1px solid rgba(74,127,165,0.4); }
 .pays-america { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); }
 .pays-caraibes { background:rgba(29,158,117,0.12); border:1px solid rgba(29,158,117,0.3); }
+.pays-moyen-orient { background: rgba(200,100,50,0.12); border: 1px solid rgba(200,100,50,0.3); }
 .pays-zone-title { font-family:var(--font-display); font-size:1rem; font-weight:600; color:var(--white); }
 .pays-zone-list { font-size:0.78rem; color:rgba(255,255,255,0.65); line-height:1.7; }
 .pays-sub-zones { display:flex; flex-direction:column; gap:10px; }
