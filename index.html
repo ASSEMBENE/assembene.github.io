@@ -542,9 +542,10 @@ description: ASSEMBENE CONCEPTION — Votre partenaire en conception, commerce e
       </div>
 
       <div class="contact-form reveal d2">
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact">
-          <p style="display:none"><input name="bot-field"></p>
+        <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="47cbee98-05e7-409c-890e-23c9cc7db772">
+  <input type="hidden" name="subject" value="Nouvelle demande de devis — Site ASSEMBENE">
+  <input type="checkbox" name="botcheck" style="display:none">
           <div class="form-row">
             <div class="form-group">
               <label for="prenom">Prénom *</label>
@@ -584,6 +585,7 @@ description: ASSEMBENE CONCEPTION — Votre partenaire en conception, commerce e
           <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;padding:16px">
             Envoyer le message
           </button>
+<input type="hidden" name="redirect" value="https://assembene.github.io/merci/">
         </form>
       </div>
 
